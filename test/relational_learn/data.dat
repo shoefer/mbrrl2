@@ -1,0 +1,89 @@
+# t=0
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(65 60) on(66 60) on(67 60) on(68 60) on(69 68) on(70 69) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) clear(70) inhandNil() 
+grab(65)
+# t=1
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(65) on(66 60) on(67 60) on(68 60) on(69 68) on(70 69) upright(60) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) clear(70) 
+puton(70)
+# t=2
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(67 60) on(68 60) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) inhandNil() 
+grab(67)
+# t=3
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(67) on(66 60) on(68 60) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) 
+puton(65)
+# t=4
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) inhandNil() 
+grab(66)
+# t=5
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(66) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) 
+puton(67)
+# t=6
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(68 60) on(67 65) on(66 67) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) inhandNil() 
+grab(66)
+# t=7
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(66) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) 
+puton(67)
+# t=8
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(68 60) on(67 65) on(66 67) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) inhandNil() 
+grab(66)
+# t=9
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(66) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) 
+puton(67)
+# t=10
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(68 60) on(67 65) on(66 67) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) inhandNil() 
+grab(66)
+# t=11
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(66) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) 
+puton(67)
+# t=12
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(68 60) on(67 65) on(66 67) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) inhandNil() 
+grab(65)
+# t=13
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(65) on(66 60) on(67 60) on(68 60) on(69 68) on(70 69) upright(60) upright(67) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) clear(70) 
+puton(67)
+# t=14
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(67 60) on(68 60) on(65 67) on(69 68) on(70 69) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(66) clear(70) inhandNil() 
+grab(65)
+# t=15
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(65) on(66 60) on(67 60) on(68 60) on(69 68) on(70 69) upright(60) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) clear(70) 
+puton(66)
+# t=16
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(67 60) on(68 60) on(65 66) on(69 68) on(70 69) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(67) clear(70) inhandNil() 
+grab(65)
+# t=17
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(65) on(66 60) on(67 60) on(68 60) on(69 68) on(70 69) upright(60) upright(66) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) clear(70) 
+puton(70)
+# t=18
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(67 60) on(68 60) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) inhandNil() 
+grab(67)
+# t=19
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(67) on(66 60) on(68 60) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) 
+puton(66)
+# t=20
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(68 60) on(67 66) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(67) inhandNil() 
+grab(67)
+# t=21
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(67) on(66 60) on(68 60) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) 
+puton(66)
+# t=22
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(68 60) on(67 66) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(65) clear(67) inhandNil() 
+grab(67)
+# t=23
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(67) on(66 60) on(68 60) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(68) upright(69) upright(70) clear(65) clear(66) clear(67) 
+puton(65)
+# t=24
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(66 60) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) inhandNil() 
+grab(66)
+# t=25
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(66) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) 
+puton(67)
+# t=26
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(68 60) on(67 65) on(66 67) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) inhandNil() 
+grab(66)
+# t=27
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(66) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) 
+puton(67)
+# t=28
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 on(68 60) on(67 65) on(66 67) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(66) upright(67) upright(68) upright(69) upright(70) clear(66) inhandNil() 
+grab(66)
+# t=29
+table(60) block(65) block(66) block(67) block(68) block(69) block(70) size(60)=4 size(65)=3 size(66)=3 size(67)=3 size(68)=3 size(69)=3 size(70)=3 inhand(66) on(68 60) on(67 65) on(69 68) on(70 69) on(65 70) upright(60) upright(65) upright(67) upright(68) upright(69) upright(70) clear(66) clear(67) 

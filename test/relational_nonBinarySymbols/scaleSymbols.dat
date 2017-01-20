@@ -1,0 +1,28 @@
+grab 1 action binary 
+puton 1 action binary 
+table 1 primitive binary 
+block 1 primitive binary 
+ball 1 primitive binary 
+on 2 primitive binary 
+inhand 1 primitive binary 
+#upright 1 primitive binary 
+out 1 primitive binary 
+size 1 primitive integer_set [1,2,3,4] 
+scale 1 primitive binary
+scalePan 1 primitive binary
+scalePart1 2 primitive binary
+scalePart2 2 primitive binary
+scaleBalance 1 primitive integer_set [1,2,3,4,5]
+#scalePanPair 2 primitive binary
+#scalePanHeight 1 primitive integer_set [1,2,3,4,5]
+clear 1 conjunction binary  <-- All Y  -on(Y X) 
+inhandNil 0 conjunction binary  <-- All X  -inhand(X) 
+above 2 transclosure binary  <-- + on
+aboveNotable 2 conjunction binary  <-- above(X Y) -table(Y)
+aboveScalePan 1 conjunction binary <-- above(X Y) scalePan(Y)
+aboveScalePart1 2 conjunction binary <-- above(X Z) clear(X) scalePart1(Z Y)
+aboveScalePart2 2 conjunction binary <-- above(X Z) clear(X) scalePart2(Z Y)
+numAbove 1 count integers <-- Num Y  aboveNotable(Y X)
+scaleTowerDiff 1 function_difference integers <-- numAbove(Y) numAbove(Z) scalePart1(Y X) scalePart2(Z X)
+#height 1 count integers  <-- Num Y  aboveNotable(X Y)
+#sum_height 0 sum integers  <--  Sum height

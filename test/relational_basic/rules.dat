@@ -1,0 +1,49 @@
+ACTION:
+grab(X)
+CONTEXT:
+inhand(Y), size(X)==4
+OUTCOMES:
+0.833679 on(Y X), upright(Y), -inhand(Y)
+
+ACTION:
+grab(X)
+CONTEXT:
+clear(X), on(X Y), -ball(X)
+OUTCOMES:
+0.568794 inhand(X), -on(X Y), -upright(X)
+0.0632963 inhand(X), -on(X Y)
+0.0602795 
+
+ACTION:
+grab(X)
+CONTEXT:
+ball(X), on(X Y)
+OUTCOMES:
+0.649315 inhand(X), -on(X Y)
+
+ACTION:
+puton(X)
+CONTEXT:
+block(X), on(X V), clear(X), inhand(Y), table(Z)
+OUTCOMES:
+0.320974 on(Y X), upright(Y), -inhand(Y)
+0.143603 on(Y Z), on(X Z), upright(Y), -on(X V), -inhand(Y)
+0.143603 on(Y Z), upright(Y), -inhand(Y)
+0.0716948 on(Y Z), -inhand(Y)
+0.0507563 -inhand(Y), -upright(X)
+0.0507563 on(Y X), -inhand(Y), -upright(X)
+0.0507563 on(V Y), on(Y Z), on(X Z), upright(Y), -on(X V), -inhand(Y)
+
+ACTION:
+puton(X)
+CONTEXT:
+on(X V), inhand(Y), table(Z), -block(X)
+OUTCOMES:
+0.33 on(X Z), on(Y Z), upright(Y), -on(X V), -inhand(Y)
+0.307706 on(Y Z), upright(Y), -inhand(Y)
+0.0685819 on(Y Z), out(X), -on(X Z), -inhand(Y), -upright(X)
+0.156548 on(Y Z), on(X Z), -on(X V), -inhand(Y)
+0.0685819 out(X), out(Y), -on(X V), -inhand(Y), -upright(X)
+0.0685819 out(Y), -inhand(Y)
+
+

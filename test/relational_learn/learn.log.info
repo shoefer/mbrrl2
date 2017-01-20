@@ -1,0 +1,81 @@
+--- SYMBOLS ---
+*State symbols*
+table 1 primitive binary  
+block 1 primitive binary  
+ball 1 primitive binary  
+on 2 primitive binary  
+inhand 1 primitive binary  
+upright 1 primitive binary  
+out 1 primitive binary  
+size 1 primitive integers  
+clear 1 conjunction binary  <-- All Y  -on(Y X)  
+inhandNil 0 conjunction binary  <-- All X  -inhand(X)  
+above 2 transclosure binary  <-- + on 
+aboveNotable 2 conjunction binary  <-- above(X Y) -table(Y)  
+height 1 count integers  <-- Num Y  aboveNotable(X Y) 
+sum_height 0 sum integers  <--  Sum height 
+--- RULES ---
+#rules = 4
+# Rule #0  (1 out of 4)
+ACTION:
+  default()
+CONTEXT:
+  --
+OUTCOMES:
+  0.5 <no-change>
+  0.5 <noise>
+
+# Rule #1  (2 out of 4)
+ACTION:
+  puton(X)
+CONTEXT:
+  inhand(Y) 
+OUTCOMES:
+  0.71 on(Y X) upright(Y) -inhand(Y) 
+  0.29 <noise>
+
+# Rule #2  (3 out of 4)
+ACTION:
+  grab(X)
+CONTEXT:
+  on(X Y) clear(X) 
+OUTCOMES:
+  0.79 inhand(X) -on(X Y) -upright(X) 
+  0.21 <noise>
+
+# Rule #3  (4 out of 4)
+ACTION:
+  grab(X)
+CONTEXT:
+  -clear(X) 
+OUTCOMES:
+  1 <noise>
+
+
+Responsibilities:
+[0] 0 0
+[1] 14 0.483
+[2] 14 0.483
+[3] 1 0.0345
+-> Coverage of non-default rules: 100%
+-> Non-noise explanations: 86.2% (1. - 4/29)
+
+--- STATISTICS ---
+#rounds = 162
+SEARCH OPERATORS:  (#applied  #improve  ratio     improveTotal  improveStep)
+[0]   10  2  0.2  398  199  ExplainExperiences
+[1]   10  1  0.1  186  186  ExplainExperiences_slim
+[2]   1  0  0  0  ExplainExperiences_slim_comparingValues
+[3]   80  71  0.887  43.8  0.617  DropContextLiterals_approximativeVersion
+[4]   7  0  0  0  DropReferences
+[5]   10  0  0  0  DropRules
+[6]   12  1  0.0833  0.674  0.674  SplitOnLiterals
+[7]   9  0  0  0  AddLiterals
+[8]   6  0  0  0  AddReferences
+[9]   5  0  0  0  AddAbstractEquality
+[10]   6  0  0  0  AbstractEquality
+[11]   6  0  0  0  SplitOnLiteralConjunctions
+History of successful SO applications: 
+[ 0 3 3 3 3 3 3 3 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 0 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 6 3 ]
+History of SO applications: 
+[ 3 9 10 5 8 0 3 3 3 4 3 3 3 3 1 3 3 3 3 3 3 6 3 3 6 3 3 3 3 3 3 3 8 3 3 3 3 3 3 3 3 3 3 7 3 3 9 3 3 3 3 3 3 3 10 3 3 3 3 3 0 3 3 3 3 3 3 5 3 3 3 3 3 3 8 3 3 3 3 3 4 3 3 3 3 3 3 3 3 3 4 1 10 5 9 8 6 3 3 3 10 5 9 0 4 6 8 7 1 11 0 3 3 11 9 6 7 5 7 11 7 7 1 0 0 1 5 11 0 4 10 11 6 7 6 1 5 6 6 1 0 11 7 5 5 7 1 0 6 6 1 5 4 10 3 3 6 4 1 0 8 2 ]

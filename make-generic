@@ -1,0 +1,713 @@
+# this is a generic make file
+# supposed to be called from lib, test and projects Makefiles
+#
+# user configuration options are set in make-config -- not here!
+
+.SECONDARY:
+
+BASE := $(shell cd $(BASE);pwd -L)
+LIBPATH = $(BASE)/extern
+ifndef MLR_EXLIB_PATH
+MLR_EXLIB_PATH = $(HOME)/lib
+endif
+KERNEL_RELEASE = $(shell uname -r)
+ARCH = $(shell uname -m)
+
+$(info ------------------------------------------------------------)
+$(info make $(shell pwd -L) )
+$(info BASE=$(BASE) )
+$(info ------------------------------------------------------------)
+
+################################################################################
+#
+# load user options from the local make-config
+#
+################################################################################
+include $(BASE)/make-config
+
+
+################################################################################
+#
+# standard objects to be compiled, output file
+#
+################################################################################
+ifndef OBJS
+OBJS = main.o
+endif
+ifndef OUTPUT
+OUTPUT = x.exe
+endif
+
+
+################################################################################
+#
+# standard compiler options (debug, release, etc)
+#
+################################################################################
+# (a tag like `OPTIM=fast' in the local Makefiles changes default debug mode)
+
+ifndef OPTIM
+OPTIM = debug#(leave no space!)
+endif
+
+ifeq ($(OPTIM),debug)
+CXXFLAGS := -g -Wall $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),fast_debug)
+CXXFLAGS := -g -O3 -Wall $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),penibel)
+CXXFLAGS := -g -Wall -Wextra $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),ddd)
+CXXFLAGS := -g -Wall -fno-default-inline $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),fast)
+CXXFLAGS := -O3 -Wall -DMT_NOCHECK $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),prof)
+CXXFLAGS := -O3 -pg -Wall -DMT_NOCHECK -fno-inline $(CXXFLAGS)
+LDFLAGS += -pg
+endif
+ifeq ($(OPTIM),callgrind)
+CXXFLAGS := -O3 -g -Wall -DMT_NOCHECK -fno-inline $(CXXFLAGS)
+endif
+
+################################################################################
+#
+# Check whether to build RuleLearner2 interface
+#
+################################################################################
+
+ifndef RULELEARNER2
+RULELEARNER2 = 0#(leave no space!)
+endif
+
+
+ifeq ($(RULELEARNER2),1)
+$(info ===============================================================)
+$(info RuleLearner2 activated)
+$(info ===============================================================)
+# requires boost
+BOOST = 1
+CXXFLAGS += -DRULELEARNER2
+
+
+# LOGGING
+ifndef ROS_LOGGING
+ROS_LOGGING = 0#(leave no space!)
+endif
+
+ifeq ($(ROS_LOGGING),1)
+CXXFLAGS += -DROS_LOGGING
+endif
+
+# set LOG_LEVEL appropriately -- only has an effect for ROS_LOGGING 0
+ifeq ($(ROS_LOGGING_LEVEL),"DEBUG")
+$(info Log level: DEBUG)
+endif
+
+ifeq ($(ROS_LOGGING_LEVEL),"INFO")
+$(info Log level: INFO)
+CXXFLAGS += -DNDEBUG
+endif
+
+ifeq ($(ROS_LOGGING_LEVEL),"WARN")
+$(info Log level: WARN)
+CXXFLAGS += -DNDEBUG -DNINFO
+endif
+
+ifeq ($(ROS_LOGGING_LEVEL),"ERROR")
+$(info Log level: ERROR)
+CXXFLAGS += -DNDEBUG -DNINFO -DNWARN
+endif
+
+endif
+
+
+################################################################################
+#
+# different settings for different operating system
+#
+################################################################################
+
+# first identify the system
+SYS	= $(shell uname)
+ifeq ($(shell uname -o),Cygwin)  #(maybe use MSVC or MinGW under Cygwin)
+SYS	= Cygwin
+#SYS	= MSVC
+#SYS	= MinGW
+endif
+ifneq ($(SYS),Linux)
+CXXFLAGS+= -DMT_$(SYS)
+endif
+
+ifeq ($(SYS),Linux)
+ifndef CXX
+CXX	= g++
+CC	= gcc
+endif
+LINK	= $(CXX)
+CPATH	:= $(BASE)/include:$(BASE)/src:$(CPATH)
+LPATH	:= $(BASE)/lib:$(LPATH)
+LIBS    += -lrt 
+#MEXFLAGS  = -cxx #CC='$(CXX)' CXX='$(CXX)' LD='$(CXX)'
+SHAREFLAG = -shared #-Wl,--warn-unresolved-symbols #-Wl,--no-allow-shlib-undefined
+MOC = moc
+UIC = uic
+endif
+
+ifeq ($(SYS), Darwin)
+ifndef CXX
+CXX	= g++
+CC 	= gcc
+endif
+LINK	 = $(CXX)
+CPATH	:= $(BASE)/include:$(BASE)/src:$(CPATH)
+LPATH	:= $(BASE)/lib:$(LPATH)
+SHAREFLAG = -dynamiclib #-Wl,--warn-unresolved-symbols #-Wl,--no-allow-shlib-undefined
+MOC = moc
+UIC = uic
+endif
+
+ifeq ($(SYS),Cygwin)
+CXX	= g++
+CC	= g++
+LINK	= g++
+CPATH	:= $(CPATH):../../include:$(LIBPATH)/include:/usr/X11R6/include
+LPATH	:= $(LPATH):$(LIBPATH)/lib_$(SYS):$(LIBPATH)/lib:/usr/X11R6/lib
+QTDIR 	= /usr/lib/qt3
+LDFLAGS	+= -o $(OUTPUT)
+SHAREFLAG = -shared
+endif
+
+ifeq ($(SYS),MinGW)
+CXX	= "$(MINGDIR)/bin/g++"
+LINK	= "$(MINGDIR)/bin/g++"
+CPATH	:= $(CPATH);../../include;$(LIBPATH)/include;$(MINGDIR)/include
+LPATH	:= $(LPATH);$(LIBPATH)/lib_$(SYS);$(LIBPATH)/lib_Cygwin;$(LIBPATH)/lib;$(MINGDIR)/lib
+LDFLAGS	+= -o $(OUTPUT)
+SHAREFLAG = -shared
+ifeq ($(QT),1)
+QT 	= $(LIBPATH)/qt-win-4.1.2
+endif
+endif
+
+ifeq ($(SYS),MSVC)
+BASE	:= $(BASE:/cygdrive/c/%=C:/%)
+CXX	= "$(MSDEVDIR)/../../VC98/bin/cl"
+LINK	= "$(MSDEVDIR)/../../VC98/bin/link"
+HOME	= C:/home
+QTDIR	= C:/Programme/Qt-2.3.0
+MSVC_CPATH := $(MSVC_CPATH);../../include;$(LIBPATH)/include;$(LIBPATH)/stl/stlport;$(MSDEVDIR)/../../VC98/include;$(MSDEVDIR)/../../VC98/alt/include;$(MSDEVDIR)/../../VC98/mfc/include
+MSVC_LPATH := $(MSVC_LPATH);$(MSDEVDIR)/../../VC98/mfc/lib;$(MSDEVDIR)/../../VC98/Lib;$(LIBPATH)/lib_MSVC;$(LIBPATH)/lib_Cygwin
+CXXFLAGS  += -nologo -c -W3 -GR -GX -Zm500
+#	-D"_MSC_VER 1300" -DNOUNICODE -D_GDI32_ -D_MBCS -DQT_DLL -DQT_THREAD_SUPPORT
+CXXFLAGSD+= -MLd -Od -Zi
+LDFLAGS	 += -nologo -stack:0x1000000
+LDFLAGSD += -debug
+MSVCLibs += user32.lib
+OBJ	:= $(OBJ:%=%bj)
+LDFLAGS	+= -out:"$(OUTPUT)"#$(LPATHS:%=-libpath:%)
+# gdi32.lib winspool.lib comdlg32.lib
+# kernel32.lib
+#	   advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib \
+#	   odbc32.lib odbccp32.lib
+endif
+
+
+################################################################################
+#
+# linking to external libraries
+#
+################################################################################
+# (a tag like `FREEGLUT = 1' can be defined in the make-config as needed)
+
+ifeq ($(CUDA),1)
+CXXFLAGS += -DMT_CUDA
+NXX = $(LIBPATH)/cuda/bin/nvcc
+CPATH   := $(CPATH):$(LIBPATH)/cuda/include:$(LIBPATH)/cudaSDK/C/common/inc
+ifeq ($(ARCH),x86_64)
+LPATH   := $(LPATH):$(LIBPATH)/cuda/lib64:$(LIBPATH)/cudaSDK/lib
+else
+LPATH   := $(LPATH):$(LIBPATH)/cuda/lib32:$(LIBPATH)/cudaSDK/lib
+CUDA_EMU = 1
+#$(warning WARNING: using cuda EMULATION mode)
+endif
+ifeq ($(CUDA_EMU),1)  #emulation mode!!
+NXXFLAGS = -g -deviceemu
+LIBS += -lcudart -lcublasemu -lcutil
+else
+NXXFLAGS = -O0 -Xcompiler -fPIC
+LIBS += -lcudart -lcublas -lcutil
+endif
+endif
+
+ifeq ($(SCHUNK),1)
+CXXFLAGS += -DMT_SCHUNK -DWITH_ESD_CAN=1 -DOSNAME_LINUX=1 -D__LINUX__
+CPATH   := $(CPATH):$(LIBPATH)/schunkSDH-11-05-11/include:$(LIBPATH)/schunkLWA/include
+CPATH   := $(CPATH):/usr/src/linux-headers-$(KERNEL_RELEASE)/include:/usr/src/linux-headers-$(KERNEL_RELEASE)/arch/x86/include
+LPATH   := $(LPATH):$(LIBPATH)/schunkSDH-11-05-11/lib:$(LIBPATH)/schunkLWA/lib:$(LIBPATH)/ntcan/lib
+LIBS += -lschunkSDH -lm5api -ldevice -lutil -lntcan -lpthread -lX11 #-lvs_can_api
+endif
+
+ifeq ($(FREEGLUT),1)
+CXXFLAGS  += -DMT_FREEGLUT
+MSVC_CPATH := $(MSVC_CPATH);$(LIBPATH)/freeglut/include
+MSVC_LPATH := $(MSVC_LPATH);$(LIBPATH)/freeglut/DebugStatic
+LIBS += -lglut -lGLU# -lGL -lX11
+CygwinLibs+= -lglut -lGLU -lGL
+MSVCLibs  += opengl32.lib glu32.lib vfw32.lib
+endif
+
+ifeq ($(GTKGL),1)
+CXXFLAGS  += -DMT_GTKGL
+LIBS += -lglut -lGLU -lGL -lX11
+GTK := 1
+endif
+
+ifeq ($(FLTK),1)
+CXXFLAGS  += -DMT_FLTK
+LIBS += -lfltk -lfltk_gl -lGLU -lGL
+endif
+
+ifeq ($(QTGLUT),1)
+CXXFLAGS  += -DMT_QTGLUT -DMT_QT -DQT_DLL# -DNOUNICODE
+LIBS += -lglut -lGLU -lGL -lX11
+QT := 1
+endif
+
+ifeq ($(QT),1)
+CXXFLAGS  += -DMT_QT `pkg-config --cflags  QtCore QtGui QtOpenGL`
+LIBS      += `pkg-config --libs  QtCore QtGui QtOpenGL`
+endif
+
+ifeq ($(GTK),1)
+#CXXFLAGS += `pkg-config --cflags /home/mtoussai/tmp/gtk/lib/pkgconfig/gtk+-2.0.pc /home/mtoussai/tmp/gtk/lib/pkgconfig/gtkglext-1.0.pc`
+#LIBS     += `pkg-config --libs /home/mtoussai/tmp/gtk/lib/pkgconfig/gtk+-2.0.pc /home/mtoussai/tmp/gtk/lib/pkgconfig/gtkglext-1.0.pc`
+CXXFLAGS += `pkg-config --cflags gtk+-2.0 gthread-2.0 gtkglext-1.0`
+LIBS     += `pkg-config --libs gtk+-2.0 gthread-2.0 gtkglext-1.0`
+#LPATH := /home/mtoussai/tmp/gtk/lib:$(LPATH)
+endif
+
+ifeq ($(GRAPHVIZ),1)
+LIBS += -lgraph -lgvc
+endif
+
+ifeq ($(WX),1)
+CXXFLAGS  += -DMT_WX -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D__WXGTK__ -pthread
+CPATH := $(CPATH):/usr/lib/wx/include/gtk2-unicode-release-2.8:/usr/include/wx-2.8
+LIBS += -pthread -Wl,-Bsymbolic-functions  -lwx_gtk2u_richtext-2.8 -lwx_gtk2u_aui-2.8 -lwx_gtk2u_xrc-2.8 -lwx_gtk2u_qa-2.8 -lwx_gtk2u_html-2.8 -lwx_gtk2u_adv-2.8 -lwx_gtk2u_core-2.8 -lwx_baseu_xml-2.8 -lwx_baseu_net-2.8 -lwx_baseu-2.8
+endif
+
+ifeq ($(ODE),1)
+CXXFLAGS  += -DMT_ODE -DdDOUBLE
+CPATH := $(CPATH):$(MLR_EXLIB_PATH)/ode-0.11/include
+LPATH := $(LPATH):$(MLR_EXLIB_PATH)/ode-0.11/lib
+LIBS += -lode
+endif
+
+ifeq ($(SWIFT),1)
+CXXFLAGS  += -DMT_SWIFT
+CPATH	  := $(CPATH):$(LIBPATH)/SWIFT++_1.2/include
+LPATH	  := $(LPATH):$(LIBPATH)/SWIFT++_1.2/lib
+LIBS += -lSWIFT++
+QHULL := 1
+ANN := 1
+endif
+
+ifeq ($(LEWINER),1)
+CXXFLAGS += -DMT_Lewiner
+LPATH := $(LPATH):$(BASE)/extern/Lewiner
+LIBS += -llewiner
+endif
+
+ifeq ($(SOLID),1)
+CXXFLAGS  += -DMT_SOLID
+CPATH     := $(CPATH):$(LIBPATH)/FreeSOLID-2.1.1/include
+LPATH     := $(LPATH):$(LIBPATH)/FreeSOLID-2.1.1/lib
+LIBS += -lFreeSOLID
+endif
+
+ifeq ($(ANN),1)
+CXXFLAGS  += -DMT_ANN
+#CPATH	  := $(CPATH):$(LIBPATH)/ANN_1.1/include
+#LPATH	  := $(LPATH):$(LIBPATH)/ANN_1.1/lib
+#MSVC_CPATH := $(MSVC_CPATH);$(LIBPATH)/ANN_1.1/include
+LIBS += -lann
+endif
+
+ifeq ($(QHULL),1)
+CXXFLAGS  += -DMT_QHULL
+LIBS      += -lqhull
+endif
+
+ifeq ($(OpenML),1)
+CXXFLAGS  += -DMT_OpenML
+MSVC_CPATH := $(MSVC_CPATH);$(OpenML)/include
+MSVC_LPATH := $(MSVC_LPATH);$(OpenML)/lib
+MSVCLibs  += ML10.lib MLU10.lib
+endif
+
+ifeq ($(Shark),1)
+CXXFLAGS  += -DMT_Shark
+CPATH	  := $(CPATH):$(SHARK)/include
+endif
+
+ifeq ($(IT++),1)
+CXXFLAGS  += -DMT_ITpp
+CPATH	  := $(CPATH):$(IT++)/include
+LPATH	  := $(LPATH):$(IT++)/lib
+LIBS += -lit++ -lit++external -lg2c
+CygwinLibs+= -lit++ -lit++external -lg2c
+endif
+
+ifeq ($(GL2PS),1)
+CXXFLAGS  += -DMT_GL2PS
+CPATH	  := $(CPATH):$(GL2PS)
+LIBS += -lgl2ps
+endif
+
+ifeq ($(GSL),1)
+CXXFLAGS  += -DMT_GSL
+LIBS      += -lgsl
+endif
+
+ifeq ($(SOIL),1)
+CXXFLAGS  += -DTL_SOIL
+LIBS    += -lSOIL
+endif
+
+##LAPACK MUST BE BEFORE OPENCV! (since OpenCV includes its own lapack binaries, which screw things up...)
+ifeq ($(LAPACK),1)
+CXXFLAGS  += -DMT_LAPACK
+CPATH	  := $(LIBPATH)/lapack/include:$(CPATH)
+LIBS += -llapack -lblas
+MSVC_CPATH := $(LIBPATH)/lapack/include;$(MSVC_CPATH)
+CygwinLibs+= -lcblas -latlas -lclapack -lcblaswr -lI77 -lF77
+MinGWLibs += -lcblas -lclapack -lcblaswr -latlas -lI77 -lF77 -lcygwin
+#MSVCLibs += libcblas.a libclapack.a libcblaswr.a libatlas.a libF77.a libc.lib libcygwin.a
+endif
+
+ifeq ($(OPENCV),1)
+CXXFLAGS  += -DMT_OPENCV `pkg-config --cflags /usr/lib/pkgconfig/opencv.pc`
+LIBS    += `pkg-config --libs /usr/lib/pkgconfig/opencv.pc`
+endif
+
+# newer qhull version?
+ifeq ($(ARCH_LINUX),1)
+CXXFLAGS += -DARCH_LINUX
+endif
+
+ifeq ($(HSL),1)
+CXXFLAGS  += -DMT_HSL
+CPATH	  := $(CPATH):$(LIBPATH)/HSL-archive/include
+LPATH	  := $(LPATH):$(LIBPATH)/HSL-archive/lib
+LIBS += -lHSL-debr
+endif
+
+ifeq ($(PLIB),1)
+CXXFLAGS  += -DMT_PLIB
+LIBS += -lplibjs -lplibul
+endif
+
+ifeq ($(TONY),1)
+CXXFLAGS  += -DMT_TONY
+CPATH   := $(CPATH):$(LIBPATH)/tony_mdp/include
+LPATH   := $(LPATH):$(LIBPATH)/tony_mdp/lib
+LIBS += -lmdp
+endif
+
+ifeq ($(DAI),1)
+CXXFLAGS  += -DMT_DAI
+CPATH   := $(CPATH):$(LIBPATH)/libDAI-0.2.2/include
+LPATH   := $(LPATH):$(LIBPATH)/libDAI-0.2.2/lib
+LIBS += -ldai
+endif
+
+ifeq ($(IBDS),1)
+CPATH := $(CPATH):$(MLR_EXLIB_PATH)/ibds/include
+LPATH := $(LPATH):$(MLR_EXLIB_PATH)/ibds/lib
+LIBS += -lDynamicSimulation -lCollisionDetection -lMath -lLibBulletCollision -lLibLinearMath -lqhull
+endif
+
+ifeq ($(URGLASER),1)
+CXXFLAGS  += -DMT_LASER
+CPATH     := $(CPATH):$(LIBPATH)/urg-0.8.16/include/c
+CPATH     := $(CPATH):$(LIBPATH)/urg-0.8.16/include/cpp
+LPATH     := $(LPATH):$(LIBPATH)/urg-0.8.16/src/c/urg/.libs
+LPATH     := $(LPATH):$(LIBPATH)/urg-0.8.16/src/c/system/.libs
+LPATH     := $(LPATH):$(LIBPATH)/urg-0.8.16/src/c/connection/.libs
+LIBS += -lc_urg -lc_urg_system -lc_urg_connection
+endif
+
+ifeq ($(DYNAMIXEL),1)
+CXXFLAGS  += -DMT_DYNAMIXEL
+CPATH     := $(CPATH):$(LIBPATH)/dynamixel/include
+LPATH     := $(LPATH):$(LIBPATH)/dynamixel/lib
+LIBS      += -ldxl
+endif
+
+ifeq ($(BUMBLE),1)
+CXXFLAGS  += -DMT_BUMBLE
+#CPATH     := $(CPATH):$(LIBPATH)/pgrlibdcstereo/
+#LPATH     := $(LPATH):$(LIBPATH)/pgrlibdcstereo/
+LIBS += -ldc1394 # -lpgrlibdcstereo
+endif
+
+ifeq ($(FELZ),1)
+CXXFLAGS  += -DMT_FELZ
+CPATH     := $(CPATH):$(LIBPATH)/libcolorseg/include
+LPATH     := $(LPATH):$(LIBPATH)/libcolorseg/lib
+LIBS += -lcolorseg
+endif
+
+ifeq ($(ESS),1)
+CXXFLAGS  += -DMT_ESS
+CPATH     := $(CPATH):$(LIBPATH)/blaschko-ESS-1.1/include
+LPATH     := $(LPATH):$(LIBPATH)/blaschko-ESS-1.1/lib
+LIBS += -less
+endif
+
+ifeq ($(SURF),1)
+CPATH     := $(CPATH):$(LIBPATH)/opensurf/
+LPATH     := $(LPATH):$(LIBPATH)/opensurf/
+LIBS += -lopensurf_$(ARCH)
+endif
+
+ifeq ($(PTHREAD),1)
+CXXFLAGS  += -DMT_PTHREAD
+LIBS += -lpthread -lX11
+endif
+
+ifeq ($(PHYSX),1)
+CXXFLAGS += -DMT_PHYSX -D_DEBUG -DPX_DISABLE_FLUIDS -DCORELIB -DPX32 -DLINUX
+CPATH := $(CPATH):$(MLR_EXLIB_PATH)/PhysX/Include:$(MLR_EXLIB_PATH)/PhysX/Include/extensions:$(MLR_EXLIB_PATH)/PhysX/Include/foundation:$(MLR_EXLIB_PATH)/PhysX/Include/deprecated
+LPATH := $(MLR_EXLIB_PATH)/PhysX/Lib/linux32/:$(LPATH)
+LIBS += -Wl,--start-group -lpthread -lrt\
+-lPhysX3CommonCHECKED \
+-lPvdRuntimeCHECKED \
+-lSimulationControllerCHECKED \
+-lSceneQueryCHECKED \
+-lLowLevelCHECKED \
+-lLowLevelClothCHECKED \
+-lPhysX3 \
+-lPhysX3VehicleCHECKED \
+-lPhysX3CookingCHECKED \
+-lPhysX3ExtensionsCHECKED \
+-lPhysX3CharacterKinematicCHECKED \
+-lRepX3CHECKED \
+-lRepXUpgrader3CHECKED \
+-lPhysXProfileSDKCHECKED \
+-lPxTaskCHECKED -Wl,--end-group
+endif
+
+
+
+ifeq ($(BOOST),1)
+$(info Boost activated)
+ifndef BOOST_INCLUDE_PATH
+BOOST_INCLUDE_PATH = "/usr/include"
+endif
+$(info looking for boost headers in $(BOOST_INCLUDE_PATH); if wrong set 'BOOST_INCLUDE_PATH' variable)
+
+ifndef BOOST_LIBRARY_PATH
+BOOST_LIBRARY_PATH = "/usr/lib:
+endif
+$(info looking for boost headers in $(BOOST_LIBRARY_PATH); if wrong set 'BOOST_LIBRARY_PATH' variable)
+
+CPATH := $(CPATH):$(BOOST_INCLUDE_PATH)
+LPATH := $(BOOST_LIBRARY_PATH):$(LPATH)
+LIBS += -lboost_filesystem -lboost_filesystem -lboost_serialization
+endif
+
+
+################################################################################
+#
+# also building and linking to a local component
+#
+################################################################################
+# (a tag like `buildAndLink_NILS = 1' in a Makefile triggers make to also build NILS and then link to is)
+
+#ifeq ($(buildAndLink_NILS),1)
+#BUILDS += buildComponent/NP
+#LIBS += -lNP -ldc1394
+#endif
+
+ifeq ($(buildAndLink_NIKOLAY),1)
+BUILDS += buildComponent/NJ
+LIBS += -lNJ
+endif
+
+ifeq ($(buildAndLink_RELATIONAL),1)
+BUILDS += buildComponent/relational
+LIBS += -lrelational
+endif
+
+ifeq ($(buildAndLink_STANIMIR),1)
+BUILDS += buildComponent/SD
+LIBS += -lSD
+endif
+
+ifeq ($(buildAndLink_DMITRY),1)
+BUILDS += buildComponent/DZ
+LIBS += -lDZ
+endif
+
+ifeq ($(buildAndLink_JOHANNES),1)
+BUILDS += buildComponent/JK
+LinuxLibs += -lJK
+endif
+
+ifeq ($(buildAndLink_MTLIB),1)
+BUILDS += buildComponent/MT
+LIBS += -lMT
+endif
+
+
+################################################################################
+#
+# export Linux/MSVC include/lib paths
+#
+################################################################################
+LD_RUN_PATH += $(LPATH)
+export CPATH
+export LPATH
+export LD_RUN_PATH
+export MSVC_CPATH
+export MSVC_LPATH
+
+
+################################################################################
+#
+# make targets
+#
+################################################################################
+
+default: $(OUTPUT)
+
+clean:
+	rm -f $(OUTPUT) $(OBJS) $(PREOBJS) callgrind.out.* includeAll.o $(CLEAN)
+
+depend: generate_Makefile.dep
+
+info: force
+	@echo; echo ----------------------------------------
+	@echo "     " "environment configuration (see make-generic file)";
+	@echo ----------------------------------------; echo
+	@echo "  SYS =" "$(SYS)"
+	@echo "  PWD =" "$(PWD)"
+	@echo "  BASE =" "$(BASE)"
+	@echo "  NAME =" "$(NAME)"
+	@echo "  LIBPATH =" "$(LIBPATH)"
+	@echo "  EXTERNALS =" "$(EXTERNALS)"
+	@echo "  CXX =" "$(CXX)"
+	@echo "  CXXFLAGS =" "$(CXXFLAGS)"
+	@echo "  LINK =" "$(LINK)"
+	@echo "  LDFLAGS =" "$(LDFLAGS)"
+	@echo "  CPATH =" "$(CPATH)"
+	@echo "  LPATH =" "$(LPATH)"
+	@echo "  LD_RUN_PATH =" "$(LD_RUN_PATH)"
+	@echo "  MSVC_CPATH =" "$(MSVC_CPATH)"
+	@echo "  MSVC_LPATH =" "$(MSVC_LPATH)"
+	@echo "  OBJS =" "$(OBJS)"
+	@echo "  LIBS =" "$(LIBS)"
+	@echo "  PREOBJS =" "$(PREOBJS)"
+	@echo "  OUTPUT =" "$(OUTPUT)"
+	@echo "  BUILDS =" "$(BUILDS)"
+	@echo "  MAKEMODE =" "$(MAKEMODE)"
+	@echo "  OPTIM =" "$(OPTIM)"
+	@echo
+
+all: default
+
+
+################################################################################
+#
+# optionally include dependencies
+#
+################################################################################
+-include Makefile.dep
+
+
+################################################################################
+#
+# rules
+#
+################################################################################
+
+%.exe: $(PREOBJS) $(OBJS) $(BUILDS)
+	$(LINK) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+
+ifeq ($(compileWithIncludeAll),1)
+%.so: $(PREOBJS) includeAll.o $(BUILDS)
+	$(LINK) $(LDFLAGS) -o $@ includeAll.o $(LIBS) $(SHAREFLAG)
+else
+%.so: $(PREOBJS) $(OBJS) $(BUILDS)
+	$(LINK) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(SHAREFLAG)
+endif
+
+%.lib: $(PREOBJS) $(OBJS) $(BUILDS)
+	$(LINK) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) -static ### $(SHAREFLAG)
+
+%.a: $(PREOBJS) $(OBJS) $(BUILDS)
+	ar -crvs $@ $(OBJS)
+
+%.mexglx: $(PREOBJS) $(OBJS)
+	mex -cxx $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $($(SYS)Libs)
+
+ifeq ($(CUDA),1)
+%_cuda.o: %_cuda.cpp
+	if test ! -L $*_cuda.cu; then ln -s -f $*_cuda.cpp $*_cuda.cu; fi;
+	$(NXX) $(NXXFLAGS) -o $@ -c $*_cuda.cu
+else
+%_cuda.o: %_cuda.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+endif
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%.o: %.cxx
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%.o: %.c
+	$(CC) $(CXXFLAGS) -o $@ -c $<
+
+%.obj: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%.obj: %.cxx
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%_wrap.cxx: %.i
+	swig $(SWIGFLAGS) -c++ $<
+
+%_ui.h: %.ui
+	$(UIC) -o $*_ui.h $<
+
+%_moc.cpp: %.h
+	$(MOC) -o $*_moc.cpp $*.h
+
+%_$(SYS).moccpp: %.h
+	cd $(*D); $(MOC) -o $(*F)_$(SYS).moccpp $(<F)
+
+%_$(SYS).moccpp: %.h force
+	cd $(*D); $(MOC) -o $(*F)_$(SYS).moccpp $(<F)
+
+## build a local component
+buildComponent/%:
+	$(MAKE) -C $(BASE)/src/$*
+
+## generate the make-config from the default make-config.default
+$(BASE)/make-config:
+	cp $(BASE)/make-config.default $(BASE)/make-config
+
+## generate a make dependency file
+generate_Makefile.dep: $(OBJS:%.o=%.cpp)
+	-$(CXX) -MM $(OBJS:%.o=%.cpp) $(CXXFLAGS) > Makefile.dep
+
+includeAll.cxx: force
+	find . -maxdepth 1 -name '*.cpp' -exec echo "#include \"{}\"" \; > includeAll.cxx
+
+force:	;

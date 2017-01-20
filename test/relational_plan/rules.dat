@@ -1,0 +1,41 @@
+#rules = 4
+# Rule #0  (1 out of 4)
+ACTION:
+  default()
+CONTEXT:
+  --
+OUTCOMES:
+  0.5 <no-change>
+  0.5 <noise>
+
+
+# Rule #1  (2 out of 4)
+ACTION:
+  puton(X)
+CONTEXT:
+  block(X) clear(X) inhand(Y)
+OUTCOMES:
+  0.71 on(Y X) upright(Y) -inhand(Y) 
+  0.29 <noise>
+
+
+# Rule #2  (3 out of 4)
+ACTION:
+  grab(X)
+CONTEXT:
+  on(X Y) upright(X) upright(Y) inhandNil() -table(Y)
+OUTCOMES:
+  0.666 inhand(X) -on(X Y) -upright(X) 
+  0.334 <noise>
+
+
+# Rule #3  (4 out of 4)
+ACTION:
+  grab(X)
+CONTEXT:
+  table(Y) clear(X) on(X Y) inhandNil()
+OUTCOMES:
+  1 inhand(X) -on(X Y) -upright(X) 
+  0 <noise>
+
+

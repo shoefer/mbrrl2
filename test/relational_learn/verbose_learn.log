@@ -1,0 +1,2479 @@
+RuleLearner::learn_rules [START]
+0.51e-101e-110x7ffc0ba18248Number of training experiences 29
+Default rule:
+# *** RULES ***
+##### default()
+# 0    (100%, 29/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/29 = 0%)
+  0.95 <noise>    # [0 1 2 3 4 5 6 7 8 9 10 ...] (29/29 = 100%)
+
+#  *** 29 EXPERIENCES (experience:rule-id) ***
+#  NON-default rules explain: 0% (0/29)
+#  NON-noise outcomes explain: 0% (0/29)
+# 0:default   (weight=1)
+# 1:default   (weight=1)
+# 2:default   (weight=1)
+# 3:default   (weight=1)
+# 4:default   (weight=1)
+# 5:default   (weight=1)
+# 6:default   (weight=1)
+# 7:default   (weight=1)
+# 8:default   (weight=1)
+# 9:default   (weight=1)
+# 10:default   (weight=1)
+# 11:default   (weight=1)
+# 12:default   (weight=1)
+# 13:default   (weight=1)
+# 14:default   (weight=1)
+# 15:default   (weight=1)
+# 16:default   (weight=1)
+# 17:default   (weight=1)
+# 18:default   (weight=1)
+# 19:default   (weight=1)
+# 20:default   (weight=1)
+# 21:default   (weight=1)
+# 22:default   (weight=1)
+# 23:default   (weight=1)
+# 24:default   (weight=1)
+# 25:default   (weight=1)
+# 26:default   (weight=1)
+# 27:default   (weight=1)
+# 28:default   (weight=1)
+
+SCORE = -7.4e+02
+========== LEARN RULE-SET ROUND 1 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 2 ==========
+>>> Search operator ***AddAbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 3 ==========
+>>> Search operator ***AbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 4 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 5 ==========
+>>> Search operator ***AddReferences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 6 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(X X) -on(X Y) -on(Y X) -on(Y Y) -inhand(X) -upright(Y) -out(X) -out(Y) -inhandNil() -above(X X) -above(X Y) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 7 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(X X) -on(X Y) -on(Y Y) -inhand(X) -upright(Y) -out(X) -out(Y) -inhandNil() -above(X X) -above(X Y) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 8 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(X X) -on(X Y) -on(Y Y) -inhand(X) -upright(Y) -out(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 9 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -upright(Y) -out(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 10 ==========
+>>> Search operator ***DropReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+Responsibilities after round 10:
+[0] 15 0.52 [ 0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 ]
+[1] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+-> Explanation of non-default rules: 0.48
+-> Non-noise explanations: 0.41
+========== LEARN RULE-SET ROUND 11 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -upright(Y) -out(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 12 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -upright(Y) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 13 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -upright(Y) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 14 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (52%, 15/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/15 = 0%)
+  0.95 <noise>    # [0 2 4 6 8 10 12 14 16 18 20 ...] (15/15 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -4.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 15 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 16 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 17 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 18 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -ball(Y) -on(X X) -on(Y Y) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 19 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 20 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(X) -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.6e+02
+Sanity check successful.
+Responsibilities after round 20:
+[0] 6 0.21 [ 0 2 4 12 18 24 ]
+[1] 9 0.31 [ 6 8 10 14 16 20 22 26 28 ]
+[2] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+-> Explanation of non-default rules: 0.79
+-> Non-noise explanations: 0.69
+========== LEARN RULE-SET ROUND 21 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -ball(Y) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 22 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 23 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 24 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 25 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 26 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -above(Y X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 27 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(X) block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.6e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 28 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(X) -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 29 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(Y Y) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 30 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -inhandNil() -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.5e+02
+Sanity check successful.
+Responsibilities after round 30:
+[0] 6 0.21 [ 0 2 4 12 18 24 ]
+[1] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[2] 9 0.31 [ 6 8 10 14 16 20 22 26 28 ]
+-> Explanation of non-default rules: 0.79
+-> Non-noise explanations: 0.69
+========== LEARN RULE-SET ROUND 31 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -table(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 32 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -on(X X) -inhand(X) -out(Y) -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 33 ==========
+>>> Search operator ***AddReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 34 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -out(Y) -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 35 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -above(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 36 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -above(X X) -aboveNotable(X Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 37 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -above(X X) -aboveNotable(X Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 38 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -above(X X) -aboveNotable(X Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(X X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 39 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -above(X X) -aboveNotable(X Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(X X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 40 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (21%, 6/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/6 = 0%)
+  0.95 <noise>    # [0 2 4 12 18 24 ] (6/6 = 100%)
+##### grab(X)
+# 1    (31%, 9/29)
+CONTEXT: block(Y) on(X Y) upright(Y) clear(X) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(X X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.74 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/9 = 89%)
+  0.26 <noise>    # [16 ] (1/9 = 11%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -above(X X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.5e+02
+Sanity check successful.
+Responsibilities after round 40:
+[0] 6 0.21 [ 0 2 4 12 18 24 ]
+[1] 9 0.31 [ 6 8 10 14 16 20 22 26 28 ]
+[2] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+-> Explanation of non-default rules: 0.79
+-> Non-noise explanations: 0.69
+========== LEARN RULE-SET ROUND 41 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) -above(X X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(X X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 42 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(X X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 43 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y X) -on(Y Y) -out(X) -clear(Y) -above(X X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 44 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 45 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y Y) -out(X) -clear(Y) -above(X X) -above(Y Y) -aboveNotable(X X) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 46 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(X) block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y Y) -out(X) -clear(Y) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 47 ==========
+>>> Search operator ***AddAbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 48 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y Y) -out(X) -clear(Y) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 49 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) inhandNil() above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y Y) -out(X) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.5e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 50 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -on(Y Y) -out(X) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.4e+02
+Sanity check successful.
+Responsibilities after round 50:
+[0] 5 0.17 [ 0 2 4 18 24 ]
+[1] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[2] 10 0.34 [ 6 8 10 12 14 16 20 22 26 28 ]
+-> Explanation of non-default rules: 0.83
+-> Non-noise explanations: 0.69
+========== LEARN RULE-SET ROUND 51 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) upright(X) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -out(X) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 52 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -out(X) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 53 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) -inhand(X) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 54 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 -ball(Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 55 ==========
+>>> Search operator ***AbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 56 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -above(X X) -above(Y Y) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 57 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -ball(X) -above(X X) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 58 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: block(Y) on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -above(X X) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 59 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 -above(X X) 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.4e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 60 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (17%, 5/29)
+CONTEXT: 
+OUT:
+  0.05     # [] (0/5 = 0%)
+  0.95 <noise>    # [0 2 4 18 24 ] (5/5 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -2.4e+02
+Sanity check successful.
+Responsibilities after round 60:
+[0] 5 0.17 [ 0 2 4 18 24 ]
+[1] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[2] 10 0.34 [ 6 8 10 12 14 16 20 22 26 28 ]
+-> Explanation of non-default rules: 0.83
+-> Non-noise explanations: 0.69
+========== LEARN RULE-SET ROUND 61 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 size(Y)=4 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -above(Y Y) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 62 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 size(Y)=4 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -out(Y) -clear(Y) -above(X X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 63 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 size(Y)=4 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -clear(Y) -above(X X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y X) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 64 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 size(Y)=4 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -clear(Y) -above(X X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 65 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 size(Y)=4 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -inhand(Y) -out(X) -clear(Y) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 66 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: block(Y) inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 size(Y)=4 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 67 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 2    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 size(Y)=4 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+##### puton(X)
+# 3    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 68 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 69 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -ball(X) -ball(Y) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 70 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 size(Y)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -ball(X) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.3e+02
+Sanity check successful.
+Responsibilities after round 70:
+[0] 0 0 []
+[1] 10 0.34 [ 6 8 10 12 14 16 20 22 26 28 ]
+[2] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[3] 5 0.17 [ 0 2 4 18 24 ]
+-> Explanation of non-default rules: 1
+-> Non-noise explanations: 0.86
+========== LEARN RULE-SET ROUND 71 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -ball(X) -on(X X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+# 3    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 72 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -clear(Y) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 73 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(X)=3 size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 74 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+# 2    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -ball(X) -on(Y X) -on(Y Y) -inhand(X) -out(X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+##### puton(X)
+# 3    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 75 ==========
+>>> Search operator ***AddReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 76 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -ball(X) -on(Y X) -inhand(X) -out(X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 77 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -block(Y) -on(Y X) -inhand(X) -out(X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 78 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -on(Y X) -inhand(X) -out(X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 79 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -on(Y X) -out(X) -above(Y X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.2e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 80 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (34%, 10/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) aboveNotable(X Y) size(X)=3 
+OUT:
+  0.67 inhand(X) -on(X Y) -upright(X)     # [6 8 10 14 20 22 26 28 ] (8/10 = 80%)
+  0.33 <noise>    # [12 16 ] (2/10 = 20%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 3    (17%, 5/29)
+CONTEXT: table(Y) block(X) on(X Y) upright(X) upright(Y) clear(X) inhandNil() above(X Y) size(X)=3 -table(X) -on(Y X) -out(X) -aboveNotable(X X) -aboveNotable(X Y) -aboveNotable(Y Y) 
+OUT:
+  1 inhand(X) -on(X Y) -upright(X)     # [0 2 4 18 24 ] (5/5 = 100%)
+  1e-05 <noise>    # [] (0/5 = 0%)
+SCORE = -1.2e+02
+Sanity check successful.
+Responsibilities after round 80:
+[0] 0 0 []
+[1] 10 0.34 [ 6 8 10 12 14 16 20 22 26 28 ]
+[2] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[3] 5 0.17 [ 0 2 4 18 24 ]
+-> Explanation of non-default rules: 1
+-> Non-noise explanations: 0.86
+========== LEARN RULE-SET ROUND 81 ==========
+>>> Search operator ***DropReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 82 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) clear(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (52%, 15/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) size(X)=3 
+OUT:
+  0.72 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/15 = 87%)
+  0.28 <noise>    # [12 16 ] (2/15 = 13%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 83 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (52%, 15/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) size(X)=3 
+OUT:
+  0.72 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/15 = 87%)
+  0.28 <noise>    # [12 16 ] (2/15 = 13%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 84 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) clear(X) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (52%, 15/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) 
+OUT:
+  0.72 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/15 = 87%)
+  0.28 <noise>    # [12 16 ] (2/15 = 13%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 85 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (52%, 15/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) 
+OUT:
+  0.72 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/15 = 87%)
+  0.28 <noise>    # [12 16 ] (2/15 = 13%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) size(Y)=3 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 86 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### grab(X)
+# 1    (52%, 15/29)
+CONTEXT: on(X Y) upright(Y) above(X Y) 
+OUT:
+  0.72 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/15 = 87%)
+  0.28 <noise>    # [12 16 ] (2/15 = 13%)
+##### puton(X)
+# 2    (48%, 14/29)
+CONTEXT: inhand(Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 87 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (52%, 15/29)
+CONTEXT: on(X Y) above(X Y) 
+OUT:
+  0.72 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/15 = 87%)
+  0.28 <noise>    # [12 16 ] (2/15 = 13%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 88 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (52%, 15/29)
+CONTEXT: on(X Y) 
+OUT:
+  0.72 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/15 = 87%)
+  0.28 <noise>    # [12 16 ] (2/15 = 13%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 89 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 90 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using op again.
+Turning off search operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 91 ==========
+>>> Search operator ***DropReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 92 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 93 ==========
+>>> Search operator ***AbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 94 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 95 ==========
+>>> Search operator ***AddAbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 96 ==========
+>>> Search operator ***AddReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 97 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (48%, 14/29)
+CONTEXT: on(X Y) clear(X) 
+OUT:
+  0.79 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/14 = 93%)
+  0.21 <noise>    # [16 ] (1/14 = 7.1%)
+# 3    (3.4%, 1/29)
+CONTEXT: on(X Y) -clear(X) 
+OUT:
+  1 <noise>    # [12 ] (1/1 = 100%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 98 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+A new best rule-set was found:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (48%, 14/29)
+CONTEXT: on(X Y) clear(X) 
+OUT:
+  0.79 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/14 = 93%)
+  0.21 <noise>    # [16 ] (1/14 = 7.1%)
+# 3    (3.4%, 1/29)
+CONTEXT: -clear(X) 
+OUT:
+  1 <noise>    # [12 ] (1/1 = 100%)
+SCORE = -1.1e+02
+Sanity check successful.
+========== LEARN RULE-SET ROUND 99 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 100 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using op again.
+Turning off search operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 101 ==========
+>>> Search operator ***AbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 102 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 103 ==========
+>>> Search operator ***AddAbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 104 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 105 ==========
+>>> Search operator ***DropReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 106 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 107 ==========
+>>> Search operator ***AddReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 108 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 109 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 110 ==========
+>>> Search operator ***SplitOnLiteralConjunctions*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 111 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 112 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 113 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using op again.
+Turning off search operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 114 ==========
+>>> Search operator ***SplitOnLiteralConjunctions*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 115 ==========
+>>> Search operator ***AddAbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 116 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 117 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 118 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 119 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 120 ==========
+>>> Search operator ***SplitOnLiteralConjunctions*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 121 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 122 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 123 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 124 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 125 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 126 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 127 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 128 ==========
+>>> Search operator ***SplitOnLiteralConjunctions*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 129 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 130 ==========
+>>> Search operator ***DropReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+Responsibilities after round 130:
+[0] 0 0 []
+[1] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[2] 14 0.48 [ 0 2 4 6 8 10 14 16 18 20 22 24 26 28 ]
+[3] 1 0.034 [ 12 ]
+-> Explanation of non-default rules: 1
+-> Non-noise explanations: 0.86
+========== LEARN RULE-SET ROUND 131 ==========
+>>> Search operator ***AbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 132 ==========
+>>> Search operator ***SplitOnLiteralConjunctions*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 133 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 134 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 135 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 136 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 137 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 138 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 139 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 140 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 141 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 142 ==========
+>>> Search operator ***SplitOnLiteralConjunctions*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 143 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 144 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 145 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 146 ==========
+>>> Search operator ***AddLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 147 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 148 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 149 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 150 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+Responsibilities after round 150:
+[0] 0 0 []
+[1] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[2] 14 0.48 [ 0 2 4 6 8 10 14 16 18 20 22 24 26 28 ]
+[3] 1 0.034 [ 12 ]
+-> Explanation of non-default rules: 1
+-> Non-noise explanations: 0.86
+========== LEARN RULE-SET ROUND 151 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 152 ==========
+>>> Search operator ***DropRules*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 153 ==========
+>>> Search operator ***DropReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 154 ==========
+>>> Search operator ***AbstractEquality*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 155 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 156 ==========
+>>> Search operator ***DropContextLiterals_approximativeVersion*** gives it a try. <<<
+Using op again.
+Turning off search operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 157 ==========
+>>> Search operator ***SplitOnLiterals*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 158 ==========
+>>> Search operator ***DropReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 159 ==========
+>>> Search operator ***ExplainExperiences_slim*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 160 ==========
+>>> Search operator ***ExplainExperiences*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+========== LEARN RULE-SET ROUND 161 ==========
+>>> Search operator ***AddReferences*** gives it a try. <<<
+Using fresh operator.
+No better rule-set was found (although I did my very best).
+========== LEARN RULE-SET ROUND 162 ==========
+>>> Search operator ***ExplainExperiences_slim_comparingValues*** gives it a try. <<<
+Using fresh operator.
+No new rules found.
+Trying to sort rules...
+Puh, that was it, now I can't find any better rules.
+===================================================
+BEST RULE-SET:
+# *** RULES ***
+##### default()
+# 0    (0%, 0/29)
+CONTEXT: 
+OUT:
+  0.5     # [] (0/0 = 100%)
+  0.5 <noise>    # [] (0/0 = 100%)
+##### puton(X)
+# 1    (48%, 14/29)
+CONTEXT: inhand(Y) 
+OUT:
+  0.71 on(Y X) upright(Y) -inhand(Y)     # [1 3 5 7 9 11 15 19 21 23 25 ...] (12/14 = 86%)
+  0.29 <noise>    # [13 17 ] (2/14 = 14%)
+##### grab(X)
+# 2    (48%, 14/29)
+CONTEXT: on(X Y) clear(X) 
+OUT:
+  0.79 inhand(X) -on(X Y) -upright(X)     # [0 2 4 6 8 10 14 18 20 22 24 ...] (13/14 = 93%)
+  0.21 <noise>    # [16 ] (1/14 = 7.1%)
+# 3    (3.4%, 1/29)
+CONTEXT: -clear(X) 
+OUT:
+  1 <noise>    # [12 ] (1/1 = 100%)
+
+#  *** 29 EXPERIENCES (experience:rule-id) ***
+#  NON-default rules explain: 1e+02% (29/29)
+#  NON-noise outcomes explain: 86% (25/29)
+# 0:2   (weight=1)
+# 1:1   (weight=1)
+# 2:2   (weight=1)
+# 3:1   (weight=1)
+# 4:2   (weight=1)
+# 5:1   (weight=1)
+# 6:2   (weight=1)
+# 7:1   (weight=1)
+# 8:2   (weight=1)
+# 9:1   (weight=1)
+# 10:2   (weight=1)
+# 11:1   (weight=1)
+# 12:3   (weight=1)
+# 13:1   (weight=1)
+# 14:2   (weight=1)
+# 15:1   (weight=1)
+# 16:2   (weight=1)
+# 17:1   (weight=1)
+# 18:2   (weight=1)
+# 19:1   (weight=1)
+# 20:2   (weight=1)
+# 21:1   (weight=1)
+# 22:2   (weight=1)
+# 23:1   (weight=1)
+# 24:2   (weight=1)
+# 25:1   (weight=1)
+# 26:2   (weight=1)
+# 27:1   (weight=1)
+# 28:2   (weight=1)
+
+Responsibilities:
+[0] 0 0 []
+[1] 14 0.48 [ 1 3 5 7 9 11 13 15 17 19 21 23 25 27 ]
+[2] 14 0.48 [ 0 2 4 6 8 10 14 16 18 20 22 24 26 28 ]
+[3] 1 0.034 [ 12 ]
+-> Coverage of non-default rules: 1e+02%
+-> Non-noise explanations: 86% (1. - 4/29)
+STATISTICS:
+#rounds = 162
+Scores: [ -7.4e+02 -4.5e+02 -4.5e+02 -4.5e+02 -4.5e+02 -4.5e+02 -4.5e+02 -4.5e+02 -4.5e+02 -4.5e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.6e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.5e+02 -2.4e+02 -2.4e+02 -2.4e+02 -2.4e+02 -2.4e+02 -2.4e+02 -2.4e+02 -2.4e+02 -2.4e+02 -2.4e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.3e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.2e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 -1.1e+02 ]
+SEARCH OPERATORS:  (name  #applied  #improve  improveTotal  improveStep)
+[0]   10  2  4e+02  2e+02  ExplainExperiences
+[1]   10  1  1.9e+02  1.9e+02  ExplainExperiences_slim
+[2]   1  0  0  ExplainExperiences_slim_comparingValues
+[3]   80  71  44  0.62  DropContextLiterals_approximativeVersion
+[4]   7  0  0  DropReferences
+[5]   10  0  0  DropRules
+[6]   12  1  0.67  0.67  SplitOnLiterals
+[7]   9  0  0  AddLiterals
+[8]   6  0  0  AddReferences
+[9]   5  0  0  AddAbstractEquality
+[10]   6  0  0  AbstractEquality
+[11]   6  0  0  SplitOnLiteralConjunctions
+History of successful SO applications: [ 0 3 3 3 3 3 3 3 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 0 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 6 3 ]
+History of SO applications: [ 3 9 10 5 8 0 3 3 3 4 3 3 3 3 1 3 3 3 3 3 3 6 3 3 6 3 3 3 3 3 3 3 8 3 3 3 3 3 3 3 3 3 3 7 3 3 9 3 3 3 3 3 3 3 10 3 3 3 3 3 0 3 3 3 3 3 3 5 3 3 3 3 3 3 8 3 3 3 3 3 4 3 3 3 3 3 3 3 3 3 4 1 10 5 9 8 6 3 3 3 10 5 9 0 4 6 8 7 1 11 0 3 3 11 9 6 7 5 7 11 7 7 1 0 0 1 5 11 0 4 10 11 6 7 6 1 5 6 6 1 0 11 7 5 5 7 1 0 6 6 1 5 4 10 3 3 6 4 1 0 8 2 ]
+RuleLearner::learn_rules [END]

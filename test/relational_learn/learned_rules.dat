@@ -1,0 +1,36 @@
+#rules = 4
+# Rule #0  (1 out of 4)
+ACTION:
+  default()
+CONTEXT:
+  --
+OUTCOMES:
+  0.5 <no-change>
+  0.5 <noise>
+
+# Rule #1  (2 out of 4)
+ACTION:
+  puton(X)
+CONTEXT:
+  inhand(Y) 
+OUTCOMES:
+  0.71 on(Y X) upright(Y) -inhand(Y) 
+  0.29 <noise>
+
+# Rule #2  (3 out of 4)
+ACTION:
+  grab(X)
+CONTEXT:
+  on(X Y) clear(X) 
+OUTCOMES:
+  0.79 inhand(X) -on(X Y) -upright(X) 
+  0.21 <noise>
+
+# Rule #3  (4 out of 4)
+ACTION:
+  grab(X)
+CONTEXT:
+  -clear(X) 
+OUTCOMES:
+  1 <noise>
+

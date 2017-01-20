@@ -1,0 +1,19 @@
+# Control compiler options
+# Compile with debug information
+#OPTIM = debug
+# Compile with optimization
+#OPTIM = fast
+
+OPTIM = fast_debug
+
+RULELEARNER2 = 1
+# RuleLearner2 requires boost; it might be necessary to set your 
+# include and library paths appropriately
+BOOST_INCLUDE_PATH = "/usr/include"
+BOOST_LIBRARY_PATH = "/usr/lib/x86_64-linux-gnu/"
+
+# RULELEARNER2 supports log4cxx logging; if desired set ROS_LOGGING = 1
+ROS_LOGGING = 0
+# if ROS_LOGGING is not used you have to set the log level here. 
+# possible levels are DEBUG, INFO, WARN, ERROR
+ROS_LOGGING_LEVEL = "ERROR"
