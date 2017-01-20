@@ -1,0 +1,27 @@
+push_backward 1 action binary 
+push_down 1 action binary 
+push_forward 1 action binary 
+push_left 1 action binary 
+push_right 1 action binary 
+push_up 1 action binary 
+doNothing 0 action binary 
+prism 2 primitive binary 
+rev 2 primitive binary 
+rig 2 primitive binary 
+undef 2 primitive binary 
+uncert 2 primitive binary 
+box 1 primitive binary 
+sphere 1 primitive binary 
+small 1 primitive binary 
+middle 1 primitive binary 
+big 1 primitive binary 
+rightOf 2 primitive binary 
+above 2 primitive binary 
+infrontOf 2 primitive binary 
+reward 0 primitive binary 
+color 1 primitive integer_set 
+neighbor 2 primitive binary
+right 2 transclosure binary  <-- + rightOf
+numLeft 1 count integers  <-- Num Y  right(Y X)
+numRight 1 count integers  <-- Num Y  right(X Y)
+rightMost 1 conjunction binary  <-- numRight(X)=0 

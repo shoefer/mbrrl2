@@ -1,29 +1,31 @@
 # MB-RRL2 
 ### a library for model-based relational reinforcement learning
 
-
 mbrrl2 is a fork of [libPRADA](http://userpage.fu-berlin.de/tlang/prada/)
-
-If you have questions, please contact [Sebastian Höfer](mailto:science@sebastianhoefer.de).
 
 #### Main features of this fork
 
 - New object-oriented interface of the relational rule learner
-- Task-sensitive learning as presented in paper [1]
+- Task-sensitive learning as presented in [1]
 - Incremental rule learning
 - Several bugfixes
 
+### Requirements
+
+The new rule learner interface requires boost. If you don't want to use it
+set ``RULELEARNER2 = 0`` in the ``make-config`` file in the root directory.
+
 ### Installation
 
-Please type "make" in the root directory mbrrl2/.
+Please type ``make`` in the root directory.
+Then, try out the demos in ``mbrrl2/test``.
 
-Then, try out the demos in mbrrl2/test/.
+New demos are
 
-In case of problems, please contact me.
+- ``test/incremental`` (showing how to use incremental rule learning)
+- ``test/tasksensitive_example`` (showing a the task-sensitive cost function presented in [2])
 
-to understand the main features of this library, please read the guide:
-
-   doc/guide.pdf
+To understand the main features of this library, please read the guide: ``doc/guide.pdf``
 
 
 ### When using this library...
