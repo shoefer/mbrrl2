@@ -1,0 +1,46 @@
+#0
+red(31)
+a1(31)
+red(31) boing(31)
+0
+
+#0
+red(31)
+a1(31)
+red(31) boing(31)
+0
+
+#1
+blue(31)
+a2(31)
+blue(31) boing(31)
+0
+
+#1
+blue(31)
+a2(31)
+blue(31) boing(31)
+0
+
+#2
+red(31)
+a2(31)
+red(31)
+0
+
+## testing when rules go into default rule
+#tmp1(31) tmp2(31) tmp3(31)
+#a3(31)
+#tmp2(31) tmp3(31)
+
+#tmp1(31) tmp2(31)
+#a3(31)
+#tmp1(31) tmp2(31)
+
+#tmp2(31) tmp3(31)
+#a3(31)
+#tmp1(31) tmp3(31)
+
+#tmp1(31) tmp3(31)
+#a3(31)
+#tmp1(31) tmp2(31) tmp3(31)

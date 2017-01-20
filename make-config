@@ -6,6 +6,7 @@
 
 OPTIM = fast_debug
 
+# Set the following flag to 0 if you don't want to use RULELEARNER2
 RULELEARNER2 = 1
 # RuleLearner2 requires boost; it might be necessary to set your 
 # include and library paths appropriately
